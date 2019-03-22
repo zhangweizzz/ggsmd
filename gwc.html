@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/gouwuce.css">
+</head>
+<body>
+    <div class="body">
+        <div class="heard-db" id="tz">
+            <div class="heard-mx">
+                <span>正品保障，免息分期</span>
+            </div>
+            <div class="heard-dl">
+                <a href="denglu.html" id="csdl">请登录</a>
+                <a href="" class="heard-dl-a">登陆就送3500元大礼包</a>
+            </div>  
+                <ul class="heard-ul">
+                    <li><a href="">购物车</a></li>
+                    <li>客户服务</li>
+                    <li>会员福利</li>
+                    <li>ENGLISH</li>
+                </ul>
+            </div>
+            <!-- 以上是顶部 -->
+            <div class="heard">
+                <div class="heard-a">
+                    <img src="../img/39.png" alt="">
+                    <div class="heard-a-a">
+                        <p>浪琴LONGINES</p>
+                        <p>销量数58034&nbsp;&nbsp;粉丝73283 </p>
+                    </div>
+                </div>
+                <div class="heard-b">
+                    <label class="heard-lab">
+                        <span  class="heard-b-a">搜索 品牌/系列/型号</span>
+                        <input type="text" class="input-wb">
+                    </label>
+                    <button  id="sou-wb">搜万表</button>
+                </div>
+            </div>
+            <!-- 以上是头部 -->
+            <div class="content">
+                <ul>
+                    <li><a  href="zhuye.html">首页</a><p class="z"></p></li>
+                    <li><a href="">商品</a><p class="z"></p></li>
+                    <li><a href="">男士腕表</a><p class="z"></p></li>
+                    <li><a href="">女士腕表</a><p class="z"></p></li>
+                    <li><a href="">商务休闲</a><p class="z"></p></li>
+                    <li><a href="">运动场合</a><p class="z"></p></li>
+                    <li><a href="">复杂功能</a><p class="z"></p></li>
+                    <li><a href="">闪购专场</a><p class="z"></p></li>
+            </ul>
+            </div>
+            <!-- 以上是中间 -->
+            <div class="foot">
+                <!-- <div class="foot-box">
+                <div id="foot-a">
+                    <img src="../img/34.jpg" alt=""  id="small">
+                    <div class="foot-a-a"></div>
+                </div>
+            <div id="foot-b">
+                    <img src="../img/34.jpg" alt=""  id="big">
+            </div>
+            <ul  id="footer">
+                    <li><img src="../img/34.jpg" alt=""  data-src="../img/34.jpg"></li>
+                    <li><img src="../img/36.jpg" alt=""  data-src="../img/36.jpg"></li>
+                    <li><img src="../img/37.jpg" alt=""  data-src="../img/37.jpg"></li>
+                    <li><img src="../img/35.jpg" alt=""  data-src="../img/35.jpg"></li>
+                    <li><img src="../img/38.jpg" alt=""  data-src="../img/38.jpg"></li>
+            </ul>
+            </div>
+               
+
+                <div class="gwc-a">
+                  <p>新品上市！HUAWEI-华为WATCH2 LEO 星空灰 华为第二代智能运动手表蓝牙版 蓝牙通话GPS心FIRS TBEAT运动指导NFC支付</p>
+                  <div class="gwc-b">新品上市！陶瓷表圈 IP68级防水防尘 实时运动监控 表盘自由切换 让运动更自由</div>
+                  <div class="gwc-c">
+                    <div class="gwc-c-a">
+                        型号：LEO星空灰蓝牙版
+                    </div>
+                    <div class="gwc-c-b">
+                        编号:61908
+                    </div>
+                    <div class="gwc-c-c">
+                        品牌:华为
+                    </div>
+                    <div class="gwc-c-d">
+                        销量:156
+                    </div>
+                  </div>
+                  <div class="gwc-d">
+                      <div class="gwc-d-a">
+                          万表价:
+                          <span>
+                              ￥1,520
+                          </span>
+                      </div>
+                  </div>
+                  <ul class="gwc-e">
+                     <li> 配送：16：45之前支付,预计1-3工作日发货</li>
+                     <li>承诺:正规保障 &nbsp; 正规发票 &nbsp; 假一陪3</li>
+                     <li>名匠保修</li>
+                  </ul>
+                  <ul class="ks">
+                        <li><img src="../img/34.jpg" alt="">黑色</li>
+                        <li><img src="../img/34.jpg" alt="">白色</li>
+                        <li><img src="../img/34.jpg" alt="">金色</li>
+                        <li><img src="../img/34.jpg" alt="">无色</li>
+                  </ul>
+                    <div class="jsl">
+                        
+                        <div class="jsl-a">
+                                数量
+                            <span calss="jian">-</span>
+                            <input type="text" value="1" id="count">
+                            <span class="jia">+</span>
+                        </div>
+                    </div>
+                    <button id="gmbtn">立即购买</button>
+                    <button id="gwcbtn">加入购物车</button>
+                </div> -->
+        </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+            var a=document.cookie;
+            
+            
+    if(a){
+    $("#csdl").html()
+   var cookie = getCookie("zwname")
+   $("#csdl").html(cookie)
+}else{
+    
+}
+
+
+    var arr=document.location.href.split('?');
+        var arr1=arr[1].split('=');
+        var id=arr1[1];
+
+     
+            $.ajax({
+                type:"get",
+                url:"../php/gwc.php",
+                data:{
+                   id:id
+                },
+                success:function(zw){
+                    var msg=JSON.parse(zw);
+                    var zz="";
+                   
+                    for(var i=0;i<msg.length;i++){
+                        var msgstr= msg[i];
+                        var{
+                            userimg,
+                            monry,
+                            xiaoliang,
+                            pinpaidian,
+                            bianhao,
+                            xinhao
+                        }=msgstr;
+                        if(msgstr){
+                    zz+=`<div class="foot-box">
+                <div id="foot-a">
+                    <img src="../img/${userimg}" alt=""  id="small">
+                    <div class="foot-a-a"></div>
+                </div>
+            <div id="foot-b">
+                    <img src="../img/${userimg}" alt=""  id="big">
+            </div>
+            <ul  id="footer">
+                    <li><img src="../img/${userimg}" alt=""  data-src="../img/${userimg}" data_img="${userimg}></li>
+                    <li><img src="../img/36.jpg" alt=""  data-src="../img/36.jpg"></li>
+                    <li><img src="../img/37.jpg" alt=""  data-src="../img/37.jpg"></li>
+                    <li><img src="../img/35.jpg" alt=""  data-src="../img/35.jpg"></li>
+                    <li><img src="../img/38.jpg" alt=""  data-src="../img/38.jpg"></li>
+            </ul>
+            </div>
+                <!-- 以上是放大镜 -->
+                <div class="gwc-a">
+                  <p>新品上市！HUAWEI-华为WATCH2 LEO 星空灰 华为第二代智能运动手表蓝牙版 蓝牙通话GPS心FIRS TBEAT运动指导NFC支付</p>
+                  <div class="gwc-b">新品上市！陶瓷表圈 IP68级防水防尘 实时运动监控 表盘自由切换 让运动更自由</div>
+                  <div class="gwc-c">
+                    <div class="gwc-c-a">
+                        型号：${xinhao}
+                    </div>
+                    <div class="gwc-c-b">
+                        编号:${bianhao}
+                    </div>
+                    <div class="gwc-c-c">
+                        品牌:华为
+                    </div>
+                    <div class="gwc-c-d">
+                        销量:156
+                    </div>
+                  </div>
+                  <div class="gwc-d">
+                      <div class="gwc-d-a">
+                          万表价:
+                          <span>
+                              ￥${ monry}
+                          </span>
+                      </div>
+                  </div>
+                  <ul class="gwc-e">
+                     <li> 配送：16：45之前支付,预计1-3工作日发货</li>
+                     <li>承诺:正规保障 &nbsp; 正规发票 &nbsp; 假一陪3</li>
+                     <li>名匠保修</li>
+                  </ul>
+                  <ul class="ks">
+                        <li><img src="../img/${userimg}" alt="">黑色</li>
+                        <li><img src="../img/36.jpg" alt="">白色</li>
+                        <li><img src="../img/37.jpg" alt="">金色</li>
+                        <li><img src="../img/38.jpg" alt="">无色</li>
+                  </ul>
+                    <div class="jsl">
+                        
+                        <div class="jsl-a">
+                                
+                            <div id="jian">-</div>
+                            <input type="text" value="1" id="count">
+                            <div id="jia">+</div>
+                        </div>
+                    </div>
+                    <button id="gmbtn">立即购买</button>
+                    <button id="gwcbtn">加入购物车</button>
+                </div>`
+              
+                $(".foot").html(zz);
+
+
+                $("#gmbtn").click(function(){
+     if(a){
+        $(location).attr('href',"gwc1.html?id="+id+"&fuhao="+fuhao);
+     }else{
+         alert("请登录")
+         $(location).attr('href','denglu.html')
+     }
+ })
+        $("#gwcbtn").click(function(){
+            $.ajax({
+                type:"get",
+                url:"../php/gouwuce.php",
+                data:{
+                   idz:id,
+                   valz:$("#count").val(),
+                   userimg:`${userimg}`,
+                   monry:`${monry}`
+                },
+                dataType:"json",
+                success:function(zw){
+                    
+                   
+                }
+                })
+            $(location).attr('href',"gwc1.html?id="+id+"&fuhao="+fuhao);
+        })
+
+
+
+                 var liList = document.querySelector("#footer").querySelectorAll("li");
+        var smallImg = document.querySelector("#small");
+        var content = document.querySelector("#foot-a");
+        var shadow = document.querySelector(".foot-a-a");
+        var bigImg = document.querySelector("#big");
+        var wrap = document.querySelector(".foot-box");
+        var bigContent = document.querySelector("#foot-b");
+        for (var i = 0; i < liList.length; i++) {
+            liList[i].onmouseover = function () {
+                var img = this.querySelector("img")
+                var src = img.src;
+                smallImg.src = src;
+                bigImg.src = img.getAttribute("data-src");
+    
+            }
+        }
+    
+        content.onmousemove = function (e) {
+            var evt = window.event || e
+            shadow.style.display = "block";
+    bigContent.style.display = "block";
+     var x = evt.pageX- getStyle(shadow, "width") - getStyle(wrap, "margin-left");
+    
+    var y = evt.pageY - getStyle(shadow, "height")- getStyle(wrap, "margin-top");
+    if (x <= 100) {
+        x = 100;
+    }
+    if (y <= 0) {
+        y = 0;
+    }
+    var maxX = getStyle(content, "width") - getStyle(shadow, "width");
+    if (x >= maxX+100) {
+        x = maxX+100;
+    }
+
+    var maxY = getStyle(content, "height") - getStyle(shadow, "height");
+    if (y >= maxY+100) {
+        y = maxY+100;
+    }
+
+    var bigX = -(getStyle(bigImg, "width") * x / getStyle(content, "width"));
+    var bigY = -(getStyle(bigImg, "height") * y / getStyle(content, "height"));
+
+    shadow.style.left = x-100 + "px";
+    shadow.style.top = y-100 + "px";
+
+    bigImg.style.left = bigX +200+ "px";
+    bigImg.style.top = bigY +200+ "px";
+
+   
+}
+
+content.onmouseout = function () {
+    shadow.style.display = "none";
+    bigContent.style.display = "none";
+}
+
+
+
+function getStyle(obj, attr) {
+    if (obj.currentStyle) {
+        return parseInt(obj.currentStyle[attr]);
+    } else {
+        return parseInt(window.getComputedStyle(obj)[attr]);
+    }
+}
+// 
+
+
+
+
+
+                }
+                 }
+                 var fuhao=$("#count").val();
+$("#jia").click(function(){
+  fuhao++;
+  console.log($("#jia"))
+  $("#count").val(fuhao);
+})
+$("#jian").click(function(){
+    fuhao--;
+    if(fuhao<=0){
+        fuhao=1;
+    }
+    $("#count").val(fuhao);
+
+})
+
+
+
+
+
+                }
+            })
+
+   
+
+
+
+
+
+
+
+    //图片切换
+
+    
+
+
+        
+    
+
+</script>
+</html>  

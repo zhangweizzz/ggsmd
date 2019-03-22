@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dengli.css">
+</head>
+
+<body>
+    <div class="heard">
+        <img src="../img/38.png" alt="">
+    </div>
+    <div class="content">
+        <img src="../img/32.jpg" alt="">
+        <ul class="content-b">
+            <li>会员登陆</li>
+            <li>
+                <input type="text" class="content-b2" placeholder="请输入手机号码">
+                <span id="content-b2-b1">请输入正确手机号</span>
+            </li>
+            <li>
+                <input type="text" class="content-b3" placeholder="请输入账号名称">
+                <span id="content-b3-b1">用户未注册</span>
+            </li>
+            <li>
+                <input type="text" class="content-b4" placeholder="请输入密码">
+                <span id="content-b4-b1">密码错误</span>
+            </li>
+            <li><button id="dlbtn">立即登陆</button></li>
+            <li>
+                <div id="zc">免费注册</div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script  src="../js/cookie.js"></script>
+<script>
+
+
+
+  var zwname="";
+
+    $("#dlbtn").click(function () {
+        var user = $(".content-b3").val()
+        var pass = $(".content-b4").val()
+        console.log(user);
+        console.log(pass);
+        $.ajax({
+            type:"get",
+            url:"../php/denglu.php",
+            data:{
+                username:user,
+                userpwd:pass
+            },
+            dataType:"json",
+            success:function(obj){
+                if(obj["code"]==1){
+                    alert(obj["msg"]);
+                    setCookie("zwname",user,7)
+                    $(location).attr('href','zhuye.html')
+                    
+                }else{
+                    $(".content-b>li>span").css("display","block")
+                }
+            }
+        });
+    });
+    $("#zc").click(function(){
+        $(location).attr('href','../index.html')
+    })
+
+
+
+
+</script>
+
+</html>

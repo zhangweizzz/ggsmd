@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/liebiao.css">
+</head>
+<body>
+    <div class="body">
+        <div class="heard-db" id="tz">
+            <div class="heard-mx">
+                <span>正品保障，免息分期</span>
+            </div>
+            <div class="heard-dl">
+                <a href="denglu.html" id="csdl">请登录</a>
+                <a href="" class="heard-dl-a">登陆就送3500元大礼包</a>
+            </div>  
+                <ul class="heard-ul">
+                    <li><a href="">购物车</a></li>
+                    <li>客户服务</li>
+                    <li>会员福利</li>
+                    <li>ENGLISH</li>
+                </ul>
+            </div>
+        <!-- 上面是顶部 -->
+        <div class="heard">
+            <div class="heard-a">
+                <img src="../img/1.png" alt="">
+                <img src="../img/3.png" alt="">
+            </div>
+            <div class="heard-c">
+                <label class="heard-b">
+                    <img src="../img/5.png" alt="">
+                    <input type="text" class="heard-ss">
+                </label>
+                <button class="heard-btn">搜索</button> 
+            </div> 
+            <img src="../img/4.png" alt="" class="heard-2wm">   
+         </div>
+         <!-- 以上是头部 -->
+         <div class="content">
+             <img src="../img/39.jpg" alt="">
+             <div class="content-a">      
+                     <div class="content-a-a1">
+                         <span>已找到581件</span>
+                        <span>机芯类型：机械</span>
+                        <span>适用人群男表</span>
+                     </div>
+                     <ul>
+                         <li>全部分类</li>
+                         <li>腕表</li>
+                         <li>表带</li>
+                     </ul>
+                     <ul>
+                         <li>价格</li>
+                         <li>1000一下</li>
+                         <li>1000~3000</li>
+                         <li>3000~5000</li>
+                         <li>5000~1,0000</li>
+            
+                     </ul>
+                     <ul>
+                         <li>爱宝时</li>
+                         <li>浪琴</li>
+                         <li>东方星</li>
+                         <li>天梭</li>
+                         <li>爱美达</li>
+                         <li>达沃斯</li>
+                         <li>欧米加</li>
+                         <li>劳力士</li>
+                         <li>赫伯林</li>
+                         <li>百达菲丽</li>
+                         <li>阿玛尼</li>
+                         <li>积家</li>
+                         <li>宝玑</li>
+                         <li>万国</li>
+                         <li>朗格</li>
+                     </ul>
+                     <ul>
+                        <li>外表材质</li>
+                         <li>铜</li>
+                         <li>钢</li>
+                         <li>18k黄金</li>
+                         <li>精钢</li>
+                     </ul>
+                     <ul>
+                         <li>镜面材质</li>
+                         <li>蓝宝石水晶</li>
+                         <li>矿物质水晶</li>
+                         <li>强化玻璃</li>
+                     </ul>
+                 
+             </div>
+         </div>
+         <!-- 以上是导航栏 -->
+         <div class="box">
+            <ul>
+                <li class="sc">
+                    <!-- <a href=""><img src="../img/z1.jpg" alt=""></a>
+                    <a href=""><p>￥1,520</p></a>
+                    <a href=""><div  class="box-a">新品上市！华为第二代手表xxxxx</div></a>
+                    <a href=""><div class="box-b">销量156</div></a>
+                    <a href=""><div class="box-c">智能品牌店</div></a> -->
+                    
+                </li>
+
+            </ul>
+        </div>
+        <!-- 以上是生成列表 -->
+       <div class="fenye">
+           <button id="prev">上一页</button>
+           <input type="text" value="1" class="connt-input">
+           <button id="next">下一页</button>
+       </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+     var a=document.cookie
+    if(a){
+    $("#csdl").html()
+   var cookie = getCookie("zwname")
+   $("#csdl").html(cookie)
+}else{
+    
+}
+
+$.ajax({
+        type:"get",
+        url:"../php/liebiao.php",
+       
+        success:function(zw){
+            var msg=JSON.parse(zw);
+            var str="";
+            for(var i=1;i<msg.length;i++){
+                var msgstr= msg[i];
+                var{
+                        userimg,
+                        monry,
+                        xiaoliang,
+                        pinpaidian,
+                        id
+                        }=msgstr;
+                 
+                            
+                str+=` <li class="sc" onclick="getgwc('${id}',this)">
+                    <img src="../img/${userimg}" alt="">
+                    <p>￥${monry}</p>
+                    <div  class="box-a">新品上市！华为第二代手表xxxxx</div>
+                    <div class="box-b">销量${ xiaoliang}</div>
+                    <div class="box-c">${ pinpaidian}</div>
+    
+                </li>`
+                    $(".box ul").html(str);
+            }
+
+        }
+    });
+
+    $(".heard-btn").click(function(){
+            var ss=$(".heard-ss").val();
+            
+            $.ajax({
+                type:"get",
+                url:"../php/liebiaocahxun.php",
+                data:{
+                    ss:ss
+                },
+                success:function(zw){
+                    var msg=JSON.parse(zw);
+                    var zz="";
+                    $(".box ul").html("");
+                    for(var i=0;i<msg.length;i++){
+                        var msgstr= msg[i];
+                        var{
+                            userimg,
+                             monry,
+                            xiaoliang,
+                            pinpaidian,
+                            id
+                        }=msgstr;
+                        if(msgstr){
+                    zz+=` <li class="sc" >
+                    <img src="../img/${userimg}" alt="">
+                    <p>￥${monry}</p>
+                    <div  class="box-a">新品上市！华为第二代手表xxxxx</div>
+                    <div class="box-b">销量${ xiaoliang}</div>
+                    <div class="box-c">${ pinpaidian}</div>
+    
+                </li>`
+                $(".box ul").html(zz);
+                }
+                    }
+
+               
+                }
+            })
+
+    })
+    function getgwc(id,li){
+        window.location.href="gwc.html?id="+id
+        
+    }
+// 以上是查询
+
+
+
+    
+</script>
+</html>
